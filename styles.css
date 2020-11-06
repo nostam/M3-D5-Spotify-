@@ -94,6 +94,9 @@ aside {
   transition: 0.5s;
 }
 
+.search-button {
+  padding: 2px !important;
+}
 /* .menu ul {
   list-style-type: none;
   font-size: 0.9rem;
@@ -209,11 +212,11 @@ aside {
 .install-btn > a:hover {
   color: white;
 }
-.login-button-index a{
+.login-button-index a {
   text-decoration: none;
   color: #fff;
 }
-.login-button-index:hover span{
+.login-button-index:hover span {
   color: #000;
 }
 .login-button-index {
@@ -331,28 +334,27 @@ aside {
     margin-bottom: 1rem;
   }
 
-  h2{
+  h2 {
     font-size: 1.3rem;
   }
-  .playlist-btns img{
+  .playlist-btns img {
     width: 2.5rem;
     height: 2.5rem;
   }
-  .album{
+  .album {
     height: 500px;
   }
   /* .playlists {
     height: 220px;
     overflow-y: auto;
   } */
-
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   /*.menu ul li {
      padding-top: 0.8rem; */
-    /* font-size: 0.5rem; */
-    /* margin-left: -3rem; */
+  /* font-size: 0.5rem; */
+  /* margin-left: -3rem; */
 
   /* .menu ul li { */
   /* padding-top: 0.8rem; */
@@ -383,7 +385,6 @@ aside {
     padding-top: 0.5;
     margin-left: 2rem;
     margin-bottom: 1rem;
-
   }
   /* .menu ul li { */
   /* padding-top: 0.8rem; */
@@ -408,7 +409,6 @@ aside {
     margin-left: 2rem;
     margin-bottom: 1rem;
   }
-
 
   .menu h6 .nav-tabs .nav-item.show .nav-link,
   .nav-tabs .nav-link,
@@ -450,53 +450,51 @@ aside {
 
   /*.menu ul li {
      padding-top: 0.8rem; */
-    /* font-size: 0.8rem; */
-    /* margin-left: -25px; */
-
-    /* margin-bottom: 1rem;
-    margin-left: 1rem; */
-
-  }
-  /* .menu ul li { */
-  /* padding-top: 0.8rem; */
   /* font-size: 0.8rem; */
   /* margin-left: -25px; */
-  /* } */
-  /* .menu h6 {
+
+  /* margin-bottom: 1rem;
+    margin-left: 1rem; */
+}
+/* .menu ul li { */
+/* padding-top: 0.8rem; */
+/* font-size: 0.8rem; */
+/* margin-left: -25px; */
+/* } */
+/* .menu h6 {
     padding-left: 15px;
     margin-top: 3rem;
     margin-bottom: 0.3rem;
     font-size: 0.7rem;
   } */
-  /* .playlists {
+/* .playlists {
     height: 220px;
     overflow-y: auto;
   } */
 
-  .nav-link {
-    padding-right: 5px;
-  }
+.nav-link {
+  padding-right: 5px;
+}
 
-  .menu h6 .nav-tabs .nav-item.show .nav-link,
-  .nav-tabs .nav-link {
-    background-color: transparent;
-    border: 0px;
-    font-size: 10px;
-    font-weight: 500;
-    color: whitesmoke;
-    letter-spacing: 0.1em;
-  }
+.menu h6 .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link {
+  background-color: transparent;
+  border: 0px;
+  font-size: 10px;
+  font-weight: 500;
+  color: whitesmoke;
+  letter-spacing: 0.1em;
+}
 
-  .nav-tabs .nav-item.show .nav-link,
-  .nav-tabs .nav-link:after {
-    display: block;
-    content: "";
-    margin-bottom: 10px;
-    border-bottom: solid 2px limegreen;
-    transform: scaleX(0);
-    transition: transform 300ms ease-in-out;
-  }
-
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link:after {
+  display: block;
+  content: "";
+  margin-bottom: 10px;
+  border-bottom: solid 2px limegreen;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
 
 .small-index-menu,
 .list-group,
@@ -596,7 +594,7 @@ h3.index-headings {
 }
 
 .main-content h6 {
-  color: black;
+  color: white;
   font-size: 10px;
   font-weight: 600px;
 }
@@ -911,7 +909,7 @@ h6 > a:hover {
 .player-volume .fas.fa-volume-mute:hover + #nowplayingVolume {
   background-color: #1db954;
 }
-#nowplayingVolume:hover::before{
+#nowplayingVolume:hover::before {
   content: " ";
   width: 16px;
   height: 16px;
@@ -921,7 +919,7 @@ h6 > a:hover {
   color: #b3b3b3;
   background-color: #b3b3b3;
   top: 50%;
-  right:0;
+  right: 0;
   transform: translate(50%, -50%);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 1;
