@@ -18,6 +18,7 @@ const getFetchTracks = function(input){
   .then(tracks => {
       artistTracks = []
      artistTracks.push(tracks);
+     changePageStructure(artistTracks)
       
   })
 
@@ -38,7 +39,7 @@ window.onload = function () {
   let id = onAlbumPageLoad()
   getFetchTracks(id)
   // getTracklist()
-  changePageStructure(artistTracks)
+  
   let btn = document.querySelectorAll(".menu div.col");
   let list = document.querySelector(".playlists");
   btn[3].firstElementChild.addEventListener("click", function () {
