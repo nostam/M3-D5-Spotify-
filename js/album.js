@@ -29,10 +29,14 @@ console.error(err);
 
 const changePageStructure = function(array){
     let pageCover = document.getElementById("coverAlbum");
-
     let artistCover = array[0].artist.picture_medium
-
     pageCover["src"] = artistCover
+
+    let pageAlbumName = document.getElementById("albumName")
+    let artistAlbumName = array[0].title
+
+    pageAlbumName.innerText = artistAlbumName
+   
 }
 window.onload = function () {
   // searchInput()
