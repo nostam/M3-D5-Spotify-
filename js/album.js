@@ -34,8 +34,9 @@ const changePageStructure = function(array){
 
     let pageAlbumName = document.getElementById("albumName")
     let artistAlbumName = array[0].title
-
     pageAlbumName.innerText = artistAlbumName
+    
+    
    
 }
 window.onload = function () {
