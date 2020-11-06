@@ -622,6 +622,10 @@ aside {
   margin-bottom: 1rem;
 }
 
+.search-button {
+  padding: 2px !important;
+}
+
 .menu {
   font-size: 0.9rem;
   padding: 5%;

@@ -31,61 +31,51 @@
     <link rel='stylesheet' href='albums.css' />
     <link rel='stylesheet' href='player.css' />
     <title>Queen | Albums</title>
-    <script src='./js/albums.js'></script>
+    
   </head>
   <body>
 
     <!-- side menu -->
     <aside>
       <div>
-        <a href="./index.html"><img src="./assets/logo.png" alt="logo" class="logo" /></a>
+        <a href="index.html"><img src="assets/logo.png" alt="logo" class="logo" /></a>
       </div>
       <div class="menu d-flex column justify-content-start align-items-center">
-            <div class="col">
-              <a href="./index.html"> <i class="fas fa-home fa-lg"></i>Home</a>
-            </div>
-          </div>
-          <div class="menu d-flex column justify-content-start align-items-center">
-            <div class="col">
-              <a href="#"> <i class="fas fa-search fa-lg"></i>Search</a>
-            </div>
-          </div>
-          <div class="menu d-flex column justify-content-start align-items-center">
-
-            <div class="col">
-              <a href="#"> <i class="fas fa-book fa-lg"></i>Your library</a>
-            </div>
-          </div>
-          <div class="menu d-flex column justify-content-start align-items-center">
-          <div class="col">
-            <a href="#">
-              <i class="fas fa-plus-circle fa-lg"></i>Create playlist</a
-            >
-          </div>
-        </div>
-        <div class="menu d-flex column justify-content-start align-items-center">
-        <div class="col">
-          <a href='#'>
-            <i class="far fa-heart fa-lg"></i>Liked Songs</a>
+        <div class="col input-group-append">
+            <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button id="searchBtn" class="btn btn-outline-success btn-sm" ><i class="fas fa-search search-button"></i></button>
         </div>
       </div>
-
-
+      <div class="menu d-flex column justify-content-start align-items-center">
+        <div class="col">
+          <a href="#"> <i class="fas fa-home fa-lg"></i>Home</a>
         </div>
+      </div>
+      <div class="menu d-flex column justify-content-start align-items-center">
+
+        <div class="col">
+          <a href="#"> <i class="fas fa-book fa-lg"></i>Your library</a>
+        </div>
+      </div>
+      <div class="menu d-flex column justify-content-start align-items-center">
+      <div class="col">
+        <a href="#">
+          <i class="fas fa-plus-circle fa-lg"></i>Create playlist</a>
+      </div>
+    </div>
+    <div class="menu d-flex column justify-content-start align-items-center">
+    <div class="col">
+      <a href='#'>
+        <i class="far fa-heart fa-lg"></i>Liked Songs</a>
+    </div>
+  </div>
+    </div>
 
       <hr />
 
         <div class='playlists'>
           <p>#playlist 1</p>
           <p>#playlist 2</p>
-          <p>#playlist 3</p>
-          <p>#playlist 4</p>
-          <p>#playlist 5</p>
-          <p>#playlist 4</p>
-          <p>#playlist 5</p>
-          <p>#playlist 5</p>
-          <p>#playlist 4</p>
-          <p>#playlist 5</p>
         </div>
 
           <ul class='stick-to-bottom install-btn'>
@@ -94,6 +84,7 @@
         </div>
       </div>
     </aside>
+
 
     <div class='row'>
 
@@ -132,12 +123,12 @@
                 <!-- the header image, title  -->
                 <div class='album row'>
                   <div class='col-12 col-md-6 col-lg-4'>
-                    <img class='album-cover img-fluid' src='./assets/bohemian-rhapsody.jpg' alt='bohemian rhapsody' />
+                    <img id="coverAlbum"  class='album-cover img-fluid' src='./assets/bohemian-rhapsody.jpg' alt='bohemian rhapsody' />
                   </div>
                   <!-- album-details -->
                   <div class='album-details col-12 col-md-6 col-lg-8' >
                     <h4 class = "mt-2">albums</h4>
-                    <h2>bohemian rhapsody</h2><h5>(the original soundtrack)</h5>
+                    <h2 id="albumName">bohemian rhapsody</h2><h5>(the original soundtrack)</h5>
                     <div class='mt-4 last-line'>
                       <img src='./assets/queen.jpg' alt='queen' class='group-img'>
                       <h6><a href='./artist-page.html' class='group-name'>Queen</a></h6>
@@ -483,8 +474,10 @@
       </div>
     </section>
     <!---player menu end-->
-    <script src="./js/albums.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/album.js"></script>
     <script src='./js/playSong.js'></script>
+    <script src="./js/artist.js"></script>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script
