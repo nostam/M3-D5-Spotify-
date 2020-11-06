@@ -18,6 +18,7 @@ const getFetchTracks = function(input){
   .then(tracks => {
       artistTracks = []
      artistTracks.push(tracks);
+     changePageStructure(artistTracks)
       
   })
 
@@ -28,17 +29,21 @@ console.error(err);
 
 const changePageStructure = function(array){
     let pageCover = document.getElementById("coverAlbum");
-
     let artistCover = array[0].artist.picture_medium
-
     pageCover["src"] = artistCover
+
+    let pageAlbumName = document.getElementById("albumName")
+    let artistAlbumName = array[0].title
+
+    pageAlbumName.innerText = artistAlbumName
+   
 }
 window.onload = function () {
   // searchInput()
   let id = onAlbumPageLoad()
   getFetchTracks(id)
   // getTracklist()
-  changePageStructure(artistTracks)
+  
   let btn = document.querySelectorAll(".menu div.col");
   let list = document.querySelector(".playlists");
   btn[3].firstElementChild.addEventListener("click", function () {
