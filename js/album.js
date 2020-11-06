@@ -1,49 +1,62 @@
-let artistTracks = []
+let artistTracks = [];
 
-const onAlbumPageLoad = function(){
-  const urlParams = new URLSearchParams(window.location.search); 
-  const id = urlParams.get('id');
-  return id
-}
+const onAlbumPageLoad = function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+  return id;
+};
 
-const getFetchTracks = function(input){
+const getFetchTracks = function (input) {
   fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${input}`, {
-      "method": "GET",
-      "headers": {
-          "x-rapidapi-key": "91cbdcb779mshb25e7872769b4fcp110c07jsnbcf1d17bc30b",
-          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
-      }
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "91cbdcb779mshb25e7872769b4fcp110c07jsnbcf1d17bc30b",
+      "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+    },
   })
-  .then(response => response.json())
-  .then(tracks => {
-      artistTracks = []
-     artistTracks.push(tracks);
-     changePageStructure(artistTracks)
-      
-  })
+    .then((response) => response.json())
+    .then((tracks) => {
+      artistTracks = [];
+      artistTracks.push(tracks);
+      changePageStructure(artistTracks);
+    })
 
-  .catch(err => {
-console.error(err);
-  });
-}
+    .catch((err) => {
+      console.error(err);
+    });
+};
 
-const changePageStructure = function(array){
-    let pageCover = document.getElementById("coverAlbum");
-    let artistCover = array[0].artist.picture_medium
-    pageCover["src"] = artistCover
+const changePageStructure = function (array) {
+  let pageCover = document.getElementById("coverAlbum");
+  pageCover["src"] = array[0].cover_medium;
 
-    let pageAlbumName = document.getElementById("albumName")
-    let artistAlbumName = array[0].title
+  document.querySelector(".album-details h5").remove();
+  let pageAlbumName = document.querySelector(".album-details h2");
+  pageAlbumName.innerText = array[0].title;
 
-    pageAlbumName.innerText = artistAlbumName
-   
-}
+  let artistImg = document.querySelector(".album-details .group-img");
+  artistImg["src"] = array[0].artist.picture_small;
+
+  let artistName = document.querySelector(".group-name");
+  artistName.innerText = array[0].artist.name;
+
+  let albumDetails = document.querySelector(".album-details .album-length");
+  const duration = (time) => {
+    const min = time / 60;
+    return min <= 60
+      ? `${Math.floor(min)} MIN`
+      : `${Math.floor(min / 60)} HR ${min} MIN}`;
+  };
+  albumDetails.innerText = `${array[0].release_date.substr(0, 4)} • ${
+    array[0].nb_tracks
+  } SONGS ${duration(array[0].duration)}`;
+};
 window.onload = function () {
   // searchInput()
-  let id = onAlbumPageLoad()
-  getFetchTracks(id)
+  let id = onAlbumPageLoad();
+  getFetchTracks(id);
   // getTracklist()
-  
+
   let btn = document.querySelectorAll(".menu div.col");
   let list = document.querySelector(".playlists");
   btn[3].firstElementChild.addEventListener("click", function () {
