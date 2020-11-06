@@ -37,5 +37,5 @@ audio{
     background-position: center;
     margin-top: 10px;
 }
-.play{background: url('../assets/play-solid.svg') no-repeat;} /*TODO change the colors*/
-.pause{background: url('../assets/pause-solid.svg') no-repeat;}
+.play{background: url('./assets/play-solid.svg') no-repeat;} /*TODO change the colors*/
+.pause{background: url('./assets/pause-solid.svg') no-repeat;}
