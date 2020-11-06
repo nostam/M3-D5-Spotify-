@@ -7,7 +7,9 @@
 #audioplayer{
     margin-bottom: 50px;
 }
-
+audio{
+    display: none;
+}
 #timeline{
 	width: 300px;
 	height: 8px;
