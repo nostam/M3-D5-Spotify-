@@ -4,7 +4,7 @@ window.onload = function () {
   let pwd = document.querySelectorAll(".input-group input")[1];
   loginBtn.addEventListener("click", function (event) {
     if (email.value === "demo" && pwd.value === "demo") {
-      window.location.href = "./albums/albums.html";
+      window.location.href = "albums.html";
     } else if (
       (email.value !== "" && pwd.value === "") ||
       (email.value !== "demo" && pwd.value !== "demo") ||

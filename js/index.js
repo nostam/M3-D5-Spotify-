@@ -90,10 +90,10 @@ window.onload = function () {
     myTab.appendChild(artist);
   };
 
-  addArtist("EMINEM");
-  // addArtist("METALLICA");
-  // addArtist("BEHEMOTH");
-  addArtist("SHEENA RINGO");
+  // addArtist("EMINEM");
+  // // addArtist("METALLICA");
+  // // addArtist("BEHEMOTH");
+  // addArtist("SHEENA RINGO");
   const listAlbums = (data) => {
     console.log(data);
     let header = document.querySelectorAll(".row.no-gutters.d-flex");

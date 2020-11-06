@@ -36,37 +36,42 @@
       <div>
         <img src="assets/logo.png" alt="logo" class="logo" />
       </div>
+      
+      <div class="menu d-flex column justify-content-start align-items-center">
+        <div class="col input-group-prepend">
+            <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button id="searchBtn" class="btn btn-outline-success btn-sm" ><i class="fas fa-search search-button"></i></button>
+        </div>
+      </div>
       <div class="menu d-flex column justify-content-start align-items-center">
         <div class="col">
           <a href="#"> <i class="fas fa-home fa-lg"></i>Home</a>
         </div>
       </div>
       <div class="menu d-flex column justify-content-start align-items-center">
-        <div class="col">
-          <!-- <a href="#"> <i class="fas fa-search fa-lg"></i>Search</a> -->
-         
-            <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" >Search</button>
-          
-        </div>
-      </div>
 
-
-      <div class="menu d-flex column justify-content-start align-items-center">
         <div class="col">
           <a href="#"> <i class="fas fa-book fa-lg"></i>Your library</a>
         </div>
       </div>
-      <div class="menu d-flex column justify-content-start align-items-center" id="listAlbums">
-        <div class="col">
-          <a href="#"> <i class="fas fa-book fa-lg"></i>List albums</a>
-        </div>
+      <div class="menu d-flex column justify-content-start align-items-center">
+      <div class="col">
+        <a href="#">
+          <i class="fas fa-plus-circle fa-lg"></i>Create playlist</a>
       </div>
-      <div class="menu d-flex column justify-content-start align-items-center" id="countUnique">
-        <div class="col">
-          <a href="#"> <i class="fas fa-book fa-lg"></i>Count Unique</a>
-        </div>
-      </div>
+    </div>
+    <div class="menu d-flex column justify-content-start align-items-center">
+    <div class="col">
+      <a href='#'>
+        <i class="far fa-heart fa-lg"></i>Liked Songs</a>
+    </div>
+  </div>
+    </div>
+  <hr />
+    <div class='playlists'>      
+    </div>
+
+    
 
         <!-- <ul>
           <li>
@@ -245,7 +250,7 @@
 
           <!-- Card Design -->
           <div class="row no-gutters d-flex">
-            <div class="myCard card p-0 col-12 col-md-3 col-lg-2" id="sampleCard">
+            <div class="myCard card p-0 col-12 col-md-3 col-lg-2 trending" id="sampleCard">
               <img
                 class="card-img-top"
                 src="images/Karaoke Italiano.jpeg"
