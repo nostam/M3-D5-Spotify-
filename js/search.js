@@ -93,7 +93,7 @@ const getRow = function(){
 }
 const cardTemplate = function(songs){
     
-        return `<div class="myCard card p-0 col-12 col-md-3 col-lg-2" id="${songs.album.id}" >
+        return `<div class="myCard card p-0 col-12 col-md-3 col-lg-2 trending" id="${songs.album.id}" >
         <img
           
           class="card-img-top"
