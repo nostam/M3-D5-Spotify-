@@ -496,7 +496,7 @@ aside {
     transform: scaleX(0);
     transition: transform 300ms ease-in-out;
   }
-}
+
 
 .small-index-menu,
 .list-group,
@@ -596,7 +596,7 @@ h3.index-headings {
 }
 
 .main-content h6 {
-  color: white;
+  color: black;
   font-size: 10px;
   font-weight: 600px;
 }

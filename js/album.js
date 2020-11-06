@@ -1,4 +1,44 @@
+let artistTracks = []
+
+const onAlbumPageLoad = function(){
+  const urlParams = new URLSearchParams(window.location.search); 
+  const id = urlParams.get('id');
+  return id
+}
+
+const getFetchTracks = function(input){
+  fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${input}`, {
+      "method": "GET",
+      "headers": {
+          "x-rapidapi-key": "91cbdcb779mshb25e7872769b4fcp110c07jsnbcf1d17bc30b",
+          "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+      }
+  })
+  .then(response => response.json())
+  .then(tracks => {
+      artistTracks = []
+     artistTracks.push(tracks);
+      
+  })
+
+  .catch(err => {
+console.error(err);
+  });
+}
+
+const changePageStructure = function(array){
+    let pageCover = document.getElementById("coverAlbum");
+
+    let artistCover = array[0].artist.picture_medium
+
+    pageCover["src"] = artistCover
+}
 window.onload = function () {
+  // searchInput()
+  let id = onAlbumPageLoad()
+  getFetchTracks(id)
+  // getTracklist()
+  changePageStructure(artistTracks)
   let btn = document.querySelectorAll(".menu div.col");
   let list = document.querySelector(".playlists");
   btn[3].firstElementChild.addEventListener("click", function () {

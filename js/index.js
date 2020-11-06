@@ -3,8 +3,11 @@ const headers = {
   "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
 };
 window.onload = function () {
+  console.log("loaded")
   getTracklist()
   searchInput()
+  // getFetchTracks("184432862")
+  
   // searchInput()
   let heartOutline = document.querySelector(".loved-track .far.fa-heart");
   let heartFilled = document.querySelector(".loved-track .fas.fa-heart");

@@ -1,7 +1,18 @@
 let search = []
+
 let filteredSearch = []
 
-const getFetch = function(input){
+// const onAlbumPageLoad = function(){
+//     const urlParams = new URLSearchParams(window.location.search); 
+//     const id = urlParams.get('id');
+
+//     const album = search.find((item)=>{
+//        return item.id === id;
+//     })
+//     return album.id
+// }
+
+const getFetchSearch = function(input){
     fetch(`https://deezerdevs-deezer.p.rapidapi.com/search?q=${input}`, {
 	"method": "GET",
 	"headers": {
@@ -19,6 +30,27 @@ const getFetch = function(input){
 	console.error(err);
     });
 }
+
+// const getFetchTracks = function(input){
+//     fetch(`https://deezerdevs-deezer.p.rapidapi.com/album/${input}`, {
+//         "method": "GET",
+//         "headers": {
+//             "x-rapidapi-key": "91cbdcb779mshb25e7872769b4fcp110c07jsnbcf1d17bc30b",
+//             "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com"
+//         }
+//     })
+//     .then(response => response.json())
+//     .then(tracks => {
+//         artistTracks = []
+//        artistTracks.push(tracks);
+        
+//     })
+	
+//     .catch(err => {
+// 	console.error(err);
+//     });
+// }
+
 
 // const generateCard = function(songs){
 //     let cardRow = document.querySelector("div.row.no-gutters")
@@ -61,7 +93,7 @@ const getRow = function(){
 }
 const cardTemplate = function(songs){
     
-        return `<div class="myCard card p-0 col-12 col-md-3 col-lg-2 id="${songs.album.id}"" >
+        return `<div class="myCard card p-0 col-12 col-md-3 col-lg-2" id="${songs.album.id}" >
         <img
           
           class="card-img-top"
@@ -78,7 +110,7 @@ const cardTemplate = function(songs){
           <h6>${songs.album.title}</h6>
         </div>
       </div>
-`  
+    `  
 
 }
 
@@ -91,7 +123,7 @@ const searchInput = function(){
     buttonSrch.addEventListener("click",()=>{
         let row = getRow();
         row.innerHTML =""
-        getFetch(input.value)
+        getFetchSearch(input.value)
         
         // generateCard(search)
     })
@@ -110,14 +142,20 @@ const getTracklist = function(){
     }
 
     function handler(e) {
-        let allCards = document.querySelectorAll(".myCard")
         
-        for(let card of allCards){
-            
-            console.log(e.target.parentElement)
+        let card = e.target.parentElement
 
-           
-        }
+        let cardImg = e.target
+       
+        console.log(cardImg)
+        let id = card.getAttribute('id') 
+
+        
+        window.location.href =`./albums.html?id=${id}`
+        
+
+        let albumImg = document.querySelector(".album.row img")
+        albumImg["src"] = cardImg;
     }
 }
 
