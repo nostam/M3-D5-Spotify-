@@ -61,8 +61,9 @@ const getRow = function(){
 }
 const cardTemplate = function(songs){
     
-        return `<div class="trending card p-0 col-12 col-md-3 col-lg-2" id="${songs.album.id}">
+        return `<div class="myCard card p-0 col-12 col-md-3 col-lg-2 id="${songs.album.id}"" >
         <img
+          
           class="card-img-top"
           src="${songs.album.cover}"
           alt="spotify_playlist_1"
@@ -91,10 +92,35 @@ const searchInput = function(){
         let row = getRow();
         row.innerHTML =""
         getFetch(input.value)
+        
         // generateCard(search)
     })
 
 }
+
+const getTracklist = function(){
+    
+
+    var parent = getRow()
+
+    if (parent.addEventListener) {
+        parent.addEventListener('click', handler, false);
+    }else if (parent.attachEvent) {
+        parent.attachEvent('onclick', handler);
+    }
+
+    function handler(e) {
+        let allCards = document.querySelectorAll(".myCard")
+        
+        for(let card of allCards){
+            
+            console.log(e.target.parentElement)
+
+           
+        }
+    }
+}
+
 
 //https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem
 

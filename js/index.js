@@ -3,6 +3,7 @@ const headers = {
   "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
 };
 window.onload = function () {
+  getTracklist()
   searchInput()
   // searchInput()
   let heartOutline = document.querySelector(".loved-track .far.fa-heart");
@@ -116,16 +117,16 @@ window.onload = function () {
     header[0].innerHTML = newContent.innerHTML;
   };
 
-  const listAlbumsTitle = function () {
-    let covers = document.querySelectorAll(".trending.card");
-    let arr = [];
-    covers.forEach((covers) => arr.push(covers.firstElementChild.alt));
-    return arr;
-  };
-  const listBtn = document.getElementById("listAlbums");
-  listBtn.addEventListener("click", function () {
-    console.log(listAlbumsTitle());
-  });
+  // const listAlbumsTitle = function () {
+  //   let covers = document.querySelectorAll(".trending.card");
+  //   let arr = [];
+  //   covers.forEach((covers) => arr.push(covers.firstElementChild.alt));
+  //   return arr;
+  // };
+  // const listBtn = document.getElementById("listAlbums");
+  // listBtn.addEventListener("click", function () {
+  //   console.log(listAlbumsTitle());
+  // });
 
   const countUnique = function () {
     let covers = document.querySelectorAll(".trending.card");
